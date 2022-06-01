@@ -1,0 +1,4 @@
+int64	inputA
+int64	inputB
+---
+float64	outputC
