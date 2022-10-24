@@ -11,13 +11,8 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Antenna.msg"  
-  "msg/EdfInput.msg"  
-  "msg/EdfOutput.msg"  
-  "msg/ElevonInput.msg"  
-  "msg/ElevonOutput.msg"  
-  "msg/ExhaustInput.msg"
-  "msg/ExhaustOutput.msg"  
-  "msg/Locate.msg"
+  "msg/EngineActuate.msg"
+  "msg/EngineSensor.msg"  
   "srv/Serve.srv"
   )
 
