@@ -1,4 +1,4 @@
-int64	inputA
-int64	inputB
+int64	input_a
+int64	input_b
 ---
-float64	outputC
+float64	output_c
