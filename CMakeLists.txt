@@ -9,25 +9,18 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(builtin_interfaces REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME}
+set(msg_files
   "msg/EngineActuate.msg"
   "msg/EngineSensor.msg"  
-  DEPENDENCIES builtin_interfaces std_msgs
-  )
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  DEPENDENCIES std_msgs
+  ADD_LINTER_TESTS
+)
 
 ament_export_dependencies(rosidl_default_runtime)
-
-  if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
 
 ament_package()
